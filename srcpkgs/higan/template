@@ -15,7 +15,7 @@ make -C icarus install prefix=/destdir/${pkgname}-${version}/usr
 }
 hostmakedepends="p7zip make pkg-config gcc"
 makedepends="gtk+-devel SDL-devel gtksourceview2-devel libXv-devel libao-devel freealut-devel libgomp-devel freetype-devel"
-short_desc="Multi-system emulator (SNES/Super Famicom and other older game consoles)"
+short_desc="Multi-system emulator (SNES/Super Famicom and older consoles"
 maintainer="RogueBeet <the@roguebeet.com>"
 license="GPL-3"
 homepage=:"https://byuu.org/emulation/higan/"
