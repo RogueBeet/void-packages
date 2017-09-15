@@ -1,0 +1,24 @@
+--- higan/target-tomoko/tomoko.cpp_old	2016-07-01 10:21:27.000000000 +0200
++++ higan/target-tomoko/tomoko.cpp	2017-09-15 02:26:38.467846639 +0200
+@@ -11,6 +11,9 @@
+   location = {Path::config(), "higan/", name};
+   if(inode::exists(location)) return location;
+ 
++  location = {Path::shared(), "higan/", name};
++  if(inode::exists(location)) return location;
++
+   directory::create({Path::local(), "higan/"});
+   return {Path::local(), "higan/", name};
+ }
+--- icarus/icarus.cpp_old	2017-01-23 14:50:34.000000000 +0100
++++ icarus/icarus.cpp		2017-09-15 02:25:44.754096787 +0200
+@@ -8,6 +8,9 @@
+   string location = {Path::program(), name};
+   if(inode::exists(location)) return location;
+ 
++  location = {Path::shared(), "icarus/", name};
++  if(inode::exists(location)) return location;
++
+   location = {Path::config(), "icarus/", name};
+   if(inode::exists(location)) return location;
+ 

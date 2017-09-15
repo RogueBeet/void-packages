@@ -1,0 +1,23 @@
+# Template file for 'higan'
+pkgname=higan
+version=v104
+revision=1
+build_style=meta
+wrksrc=higan_$version-source
+nopie=yes
+do_build() {
+make -C higan compiler=g++
+make -C icarus compiler=g++
+}
+do_install() {
+make -C higan install  prefix=/destdir/${pkgname}-${version}/usr
+make -C icarus install prefix=/destdir/${pkgname}-${version}/usr
+}
+hostmakedepends="p7zip make pkg-config gcc"
+makedepends="gtk+-devel SDL-devel gtksourceview2-devel libXv-devel libao-devel freealut-devel libgomp-devel freetype-devel"
+short_desc="Multi-system emulator (SNES/Super Famicom and other older game consoles)"
+maintainer="RogueBeet <the@roguebeet.com>"
+license="GPL-3"
+homepage=:"https://byuu.org/emulation/higan/"
+distfiles="https://download.byuu.org/higan_$version-source.7z"
+checksum=342400ba494b37a95210f11e6d941566e50a772095586406c14d75293f525544
